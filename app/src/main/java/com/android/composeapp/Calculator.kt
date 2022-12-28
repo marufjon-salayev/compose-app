@@ -38,7 +38,7 @@ fun Calculator(
         Text(text = string.value, fontSize = 26.sp)
         Row {
             Button(
-                onClick = { string.value = "1" },
+                onClick = { string.value += "1" },
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = Color.Green,
                     contentColor = Color(0xFFDC4949)
@@ -49,50 +49,56 @@ fun Calculator(
 
             Spacer(modifier = Modifier.width(10.dp))
 
-            Button(onClick = {  string.value = "2" }) {
+            Button(onClick = {  string.value += "2" }) {
                 Text(text = "2")
             }
 
             Spacer(modifier = Modifier.width(10.dp))
 
-            Button(onClick = {  string.value = "3" }) {
+            Button(onClick = {  string.value += "3" }) {
                 Text(text = "3")
             }
         }
 
         Row {
-            Button(onClick = { string.value = "4" }) {
+            Button(onClick = { string.value += "4" }) {
                 Text(text = "4")
             }
 
             Spacer(modifier = Modifier.width(10.dp))
 
-            Button(onClick = { string.value = "5"  }) {
+            Button(onClick = { string.value += "5"  }) {
                 Text(text = "5")
             }
 
             Spacer(modifier = Modifier.width(10.dp))
 
-            Button(onClick = { string.value = "6" }) {
+            Button(onClick = { string.value += "6" }) {
                 Text(text = "6")
             }
         }
 
         Row {
-            Button(onClick = { string.value = "7" }) {
+            Button(onClick = { string.value += "7" }) {
                 Text(text = "7")
             }
 
             Spacer(modifier = Modifier.width(10.dp))
 
-            Button(onClick = { string.value = "8" }) {
+            Button(onClick = { string.value += "8" }) {
                 Text(text = "8")
             }
 
             Spacer(modifier = Modifier.width(10.dp))
 
-            Button(onClick = { string.value = "9" }) {
+            Button(onClick = { string.value += "9" }) {
                 Text(text = "9")
+            }
+        }
+
+        Row {
+            Button(onClick = { string.value = string.value.dropLast(1) }) {
+                Text(text = "C")
             }
         }
     }
